@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MVPBot — AI-платформа для запуска стартапов. MVP за 14 дней: стратегия, документация, разработка." />
+  <meta name="theme-color" content="#0f1720" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MVPBot — MVP за 14 дней" />
+  <meta property="og:description" content="AI-платформа для запуска стартапов. Получите готовый MVP за 14 дней без хаоса и лишних затрат." />
+  <meta property="og:type" content="website" />
+
+  <title>MVPBot — AI-платформа для запуска стартапов</title>
+
+  <!-- Fonts loaded in CSS via @import -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- GSAP with ScrollTrigger (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════════════ -->
+<header id="site-header" role="banner">
+  <div class="container header__inner">
+
+    <!-- Logo -->
+    <a href="#" class="logo" aria-label="MVPBot — на главную">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#0f8b5f"/>
+        <path d="M8 22L14 10L18 17L21 13L24 22" stroke="#2dd4bf" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="23" cy="10" r="2" fill="#7ee7c6"/>
+      </svg>
+      MVP<span class="logo-dot">Bot</span>
+    </a>
+
+    <!-- Navigation -->
+    <button
+      id="nav-toggle"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      aria-label="Открыть меню"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="nav-menu" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#features">Продукт</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
+        <li><a href="#marketplace">Marketplace</a></li>
+        <li><a href="#agents">Агенты</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary btn-sm header__cta">Получить план запуска</a>
+
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section id="hero" aria-labelledby="hero-title">
+  <div class="container hero__layout">
+
+    <!-- Left: copy -->
+    <div class="hero__content">
+      <div class="hero__tag" role="note">AI-платформа для стартапов</div>
+
+      <h1 id="hero-title" class="hero__title">
+        MVP за&nbsp;<span class="accent">14 дней</span><br />
+        без хаоса<br />и лишних затрат
+      </h1>
+
+      <p class="hero__subtitle">
+        За 14 дней вы получите стратегию и документацию, готовый MVP.
+        9 дней на анализ, 5 дней на разработку.
+      </p>
+
+      <ul class="hero__features" aria-label="Включено">
+        <li class="hero__feature-tag">Бизнес-план</li>
+        <li class="hero__feature-tag">Анализ рынка</li>
+        <li class="hero__feature-tag">Документация MVP</li>
+        <li class="hero__feature-tag">Go-to-market</li>
+      </ul>
+
+      <div class="hero__ctas">
+        <a href="#contact" class="btn btn-primary hero-cta">
+          Получить план запуска
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#pricing" class="btn btn-ghost">Узнать тарифы</a>
+      </div>
+    </div>
+
+    <!-- Right: illustration -->
+    <div class="hero__visual" aria-hidden="true">
+      <!--
+        LOTTIE SWAP: Replace the SVG below with:
+        <div id="hero-lottie"></div>
+        Then in animations.js, inside initAnimations(), call:
+          lottie.loadAnimation({ container: document.getElementById('hero-lottie'), renderer: 'svg', loop: true, autoplay: true, path: 'assets/lottie/hero.json' });
+        See README.md for details.
+      -->
+      <svg class="hero-svg-scene" viewBox="0 0 500 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background glow -->
+        <ellipse class="hero-glow" cx="250" cy="230" rx="200" ry="180" fill="rgba(45,212,191,0.04)"/>
+
+        <!-- Center hub -->
+        <circle cx="250" cy="230" r="58" fill="#0b1220" stroke="#0f8b5f" stroke-width="1.5"/>
+        <circle cx="250" cy="230" r="44" fill="#131f2e" stroke="rgba(45,212,191,0.3)" stroke-width="1"/>
+        <!-- Bot icon in center -->
+        <rect x="234" y="214" width="32" height="28" rx="6" fill="#0f8b5f"/>
+        <circle cx="243" cy="223" r="3" fill="#2dd4bf"/>
+        <circle cx="257" cy="223" r="3" fill="#2dd4bf"/>
+        <path d="M243 231 Q250 236 257 231" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="250" y1="214" x2="250" y2="208" stroke="#2dd4bf" stroke-width="1.5"/>
+        <circle cx="250" cy="206" r="2" fill="#2dd4bf"/>
+
+        <!-- Orbit ring -->
+        <circle cx="250" cy="230" r="110" stroke="rgba(45,212,191,0.12)" stroke-width="1" stroke-dasharray="6 4"/>
+        <circle cx="250" cy="230" r="155" stroke="rgba(45,212,191,0.07)" stroke-width="1" stroke-dasharray="3 6"/>
+
+        <!-- Orbit nodes — Продукт -->
+        <g class="orbit-item">
+          <circle cx="360" cy="230" r="30" fill="#131f2e" stroke="#0f8b5f" stroke-width="1.2"/>
+          <text x="360" y="226" text-anchor="middle" font-size="11" fill="#7ee7c6" font-family="Inter,sans-serif" font-weight="600">PRD</text>
+          <text x="360" y="240" text-anchor="middle" font-size="8" fill="#64748b" font-family="Inter,sans-serif">Продукт</text>
+        </g>
+
+        <!-- Orbit nodes — Рынок -->
+        <g>
+          <circle cx="250" cy="120" r="28" fill="#131f2e" stroke="#0f8b5f" stroke-width="1.2"/>
+          <text x="250" y="116" text-anchor="middle" font-size="11" fill="#7ee7c6" font-family="Inter,sans-serif" font-weight="600">TAM</text>
+          <text x="250" y="130" text-anchor="middle" font-size="8" fill="#64748b" font-family="Inter,sans-serif">Рынок</text>
+        </g>
+
+        <!-- Orbit nodes — Финансы -->
+        <g>
+          <circle cx="140" cy="230" r="28" fill="#131f2e" stroke="#064e3b" stroke-width="1.2"/>
+          <text x="140" y="226" text-anchor="middle" font-size="11" fill="#7ee7c6" font-family="Inter,sans-serif" font-weight="600">P&L</text>
+          <text x="140" y="240" text-anchor="middle" font-size="8" fill="#64748b" font-family="Inter,sans-serif">Финансы</text>
+        </g>
+
+        <!-- Orbit nodes — MVP -->
+        <g>
+          <circle cx="250" cy="340" r="28" fill="#131f2e" stroke="#064e3b" stroke-width="1.2"/>
+          <text x="250" y="336" text-anchor="middle" font-size="11" fill="#7ee7c6" font-family="Inter,sans-serif" font-weight="600">MVP</text>
+          <text x="250" y="350" text-anchor="middle" font-size="8" fill="#64748b" font-family="Inter,sans-serif">Запуск</text>
+        </g>
+
+        <!-- Outer orbit nodes — agents -->
+        <circle cx="390" cy="130" r="20" fill="#0f8b5f22" stroke="rgba(45,212,191,0.2)" stroke-width="1"/>
+        <text x="390" y="134" text-anchor="middle" font-size="16" font-family="sans-serif">🧠</text>
+
+        <circle cx="110" cy="130" r="20" fill="#0f8b5f22" stroke="rgba(45,212,191,0.2)" stroke-width="1"/>
+        <text x="110" y="134" text-anchor="middle" font-size="16" font-family="sans-serif">📊</text>
+
+        <circle cx="110" cy="330" r="20" fill="#0f8b5f22" stroke="rgba(45,212,191,0.2)" stroke-width="1"/>
+        <text x="110" y="334" text-anchor="middle" font-size="16" font-family="sans-serif">💡</text>
+
+        <circle cx="390" cy="330" r="20" fill="#0f8b5f22" stroke="rgba(45,212,191,0.2)" stroke-width="1"/>
+        <text x="390" y="334" text-anchor="middle" font-size="16" font-family="sans-serif">🚀</text>
+
+        <!-- Connection lines from center to nodes -->
+        <line x1="304" y1="233" x2="330" y2="230" stroke="rgba(45,212,191,0.15)" stroke-width="1"/>
+        <line x1="250" y1="172" x2="250" y2="148" stroke="rgba(45,212,191,0.15)" stroke-width="1"/>
+        <line x1="196" y1="233" x2="168" y2="230" stroke="rgba(45,212,191,0.15)" stroke-width="1"/>
+        <line x1="250" y1="288" x2="250" y2="312" stroke="rgba(45,212,191,0.15)" stroke-width="1"/>
+
+        <!-- Animated pulse dots on lines -->
+        <circle r="3" fill="#2dd4bf" opacity="0.8">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M304,233 L330,230"/>
+        </circle>
+        <circle r="3" fill="#2dd4bf" opacity="0.8">
+          <animateMotion dur="3.5s" repeatCount="indefinite" path="M250,172 L250,148"/>
+        </circle>
+        <circle r="3" fill="#2dd4bf" opacity="0.8">
+          <animateMotion dur="4s" repeatCount="indefinite" path="M196,233 L168,230"/>
+        </circle>
+        <circle r="3" fill="#2dd4bf" opacity="0.8">
+          <animateMotion dur="2.8s" repeatCount="indefinite" path="M250,288 L250,312"/>
+        </circle>
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURES — Полный цикл подготовки MVP
+════════════════════════════════════════════════════════════ -->
+<section id="features" aria-labelledby="features-title">
+  <div class="container">
+
+    <div class="features__header" data-anim>
+      <div class="section-tag">Возможности</div>
+      <h2 id="features-title" class="section-title">Полный цикл подготовки MVP</h2>
+      <p class="section-subtitle">
+        Получите все ключевые материалы от идеи рынка до документации для разработки и запуска.
+      </p>
+    </div>
+
+    <div class="features__grid">
+      <article class="feature-card" data-anim data-delay="0">
+        <div class="feature-card__icon" aria-hidden="true">💡</div>
+        <h3 class="feature-card__title">Проработка идеи</h3>
+        <p class="feature-card__text">Глубокий анализ концепции: уникальность, рыночный потенциал, первичная валидация спроса.</p>
+      </article>
+      <article class="feature-card" data-anim data-delay="0.08">
+        <div class="feature-card__icon" aria-hidden="true">👥</div>
+        <h3 class="feature-card__title">Анализ аудитории</h3>
+        <p class="feature-card__text">Портрет целевого пользователя, сегментация рынка, изучение болей и Jobs-to-be-done.</p>
+      </article>
+      <article class="feature-card" data-anim data-delay="0.16">
+        <div class="feature-card__icon" aria-hidden="true">📈</div>
+        <h3 class="feature-card__title">Бизнес-план</h3>
+        <p class="feature-card__text">Финансовая модель, unit-economics, прогноз выручки, план монетизации и точка безубыточности.</p>
+      </article>
+      <article class="feature-card" data-anim data-delay="0">
+        <div class="feature-card__icon" aria-hidden="true">🗺️</div>
+        <h3 class="feature-card__title">План действий</h3>
+        <p class="feature-card__text">Пошаговый roadmap от идеи до запуска: milestones, KPI, каналы привлечения пользователей.</p>
+      </article>
+      <article class="feature-card" data-anim data-delay="0.08">
+        <div class="feature-card__icon" aria-hidden="true">📄</div>
+        <h3 class="feature-card__title">MVP-документация</h3>
+        <p class="feature-card__text">PRD, ER-диаграмма, user-flow, технические требования — всё для передачи в разработку.</p>
+      </article>
+      <article class="feature-card" data-anim data-delay="0.16">
+        <div class="feature-card__icon" aria-hidden="true">⚙️</div>
+        <h3 class="feature-card__title">Реализация</h3>
+        <p class="feature-card__text">Vibe-кодинг готового MVP с QA, feedback-циклом и подготовкой к релизу за 5 дней.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TIMELINE — 14 дней
+════════════════════════════════════════════════════════════ -->
+<section id="timeline" aria-labelledby="timeline-title">
+  <div class="container">
+
+    <div class="timeline__header" data-anim>
+      <div class="section-tag">14 дней</div>
+      <h2 id="timeline-title" class="section-title">
+        График от идеи до первых пользователей за 14 дней
+      </h2>
+      <p class="section-subtitle">
+        9 дней на стратегию и документацию, 5 дней на разработку MVP
+      </p>
+    </div>
+
+    <div class="timeline__track" role="list">
+
+      <article class="timeline-card" role="listitem">
+        <div class="timeline-card__dot" aria-hidden="true"></div>
+        <div class="timeline-card__days">Дни 1–3</div>
+        <h3 class="timeline-card__title">Идеи — Рынок</h3>
+        <p class="timeline-card__text">
+          Проверяем спрос, конкуренты, формируем сильное позиционирование, анализ рынка, портрет аудитории, ценность продукта.
+        </p>
+      </article>
+
+      <article class="timeline-card" role="listitem">
+        <div class="timeline-card__dot" aria-hidden="true"></div>
+        <div class="timeline-card__days">Дни 4–6</div>
+        <h3 class="timeline-card__title">Архитектура MVP</h3>
+        <p class="timeline-card__text">
+          Определяем ядро продукта, фичи, ключевые сценарии, юзерфлоу, функциональные требования, структура данных.
+        </p>
+      </article>
+
+      <article class="timeline-card" role="listitem">
+        <div class="timeline-card__dot" aria-hidden="true"></div>
+        <div class="timeline-card__days">Дни 7–9</div>
+        <h3 class="timeline-card__title">Бизнес-запуск</h3>
+        <p class="timeline-card__text">
+          Составляем экономику, каналы привлечения, стратегии роста.
+        </p>
+      </article>
+
+      <article class="timeline-card" role="listitem">
+        <div class="timeline-card__dot" aria-hidden="true"></div>
+        <div class="timeline-card__days">Дни 10–14</div>
+        <h3 class="timeline-card__title">Создание MVP</h3>
+        <p class="timeline-card__text">
+          Вайп-кодинг MVP, QA, feedback, подготовка релиза.
+        </p>
+      </article>
+
+      <article class="timeline-card timeline-card--final" role="listitem">
+        <div class="timeline-card__dot" aria-hidden="true"></div>
+        <div class="timeline-card__days">Финал</div>
+        <h3 class="timeline-card__title">Релиз 🚀</h3>
+        <p class="timeline-card__text">
+          Первые пользователи, маркетинг, PR, онбординг.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PROMO BANNER
+════════════════════════════════════════════════════════════ -->
+<section id="promo" aria-label="Призыв к действию">
+  <div class="container">
+    <div class="promo__inner" data-anim>
+      <h2 class="promo__title">
+        <span class="accent">AI-платформа</span> для запуска стартапов —<br />
+        MVP за 14 дней
+      </h2>
+      <a href="#contact" class="btn btn-primary">
+        Начать запуск сейчас
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRICING
+════════════════════════════════════════════════════════════ -->
+<section id="pricing" aria-labelledby="pricing-title">
+  <div class="container">
+
+    <div class="pricing__header" data-anim>
+      <div class="section-tag">Тарифы</div>
+      <h2 id="pricing-title" class="section-title">Прозрачные цены</h2>
+      <p class="section-subtitle">Выберите подходящий план или купите токены без подписки.</p>
+    </div>
+
+    <div class="pricing__grid">
+
+      <!-- Базовый -->
+      <article class="pricing-card" aria-labelledby="plan-basic">
+        <h3 id="plan-basic" class="pricing-card__name">Базовый</h3>
+        <div class="pricing-card__price">2&nbsp;999&nbsp;₽<span>/мес</span></div>
+        <p class="pricing-card__note">Для старта с одним проектом</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features" aria-label="Что включено">
+          <li class="pricing-feature">1 проект в месяц</li>
+          <li class="pricing-feature">Быстрый анализ идеи</li>
+          <li class="pricing-feature">План запуска за 14 дней</li>
+          <li class="pricing-feature">Экспорт в PDF</li>
+          <li class="pricing-feature">Включено: 3&nbsp;000 токенов/мес</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block">Купить</a>
+      </article>
+
+      <!-- Профессиональный (featured) -->
+      <article class="pricing-card pricing-card--featured" aria-labelledby="plan-pro">
+        <div class="pricing-badge">Популярный</div>
+        <h3 id="plan-pro" class="pricing-card__name">Профессиональный</h3>
+        <div class="pricing-card__price">9&nbsp;999&nbsp;₽<span>/мес</span></div>
+        <p class="pricing-card__note">Для команд и серийных предпринимателей</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features" aria-label="Что включено">
+          <li class="pricing-feature">Неограниченное количество проектов</li>
+          <li class="pricing-feature">Полная MVP-документация</li>
+          <li class="pricing-feature">Бизнес-планы, финансовая модель</li>
+          <li class="pricing-feature">Анализ рынка и конкурентов</li>
+          <li class="pricing-feature">Приоритетная поддержка</li>
+          <li class="pricing-feature">Включено: 10&nbsp;000 токенов/мес</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-block">Купить</a>
+      </article>
+
+      <!-- Токены -->
+      <article class="pricing-card" aria-labelledby="plan-tokens">
+        <h3 id="plan-tokens" class="pricing-card__name">Токены</h3>
+        <div class="pricing-card__price">990&nbsp;₽<span>&nbsp;(разово)</span></div>
+        <p class="pricing-card__note">Токены единовременные — без подписки</p>
+        <!-- Token calculation rendered from utils.js -->
+        <div class="pricing-card__calc" aria-label="Расчёт токенов">
+          <span id="token-calc">990 ₽ ÷ 0.33 ₽ = 3 000 токенов</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features" aria-label="Что включено">
+          <li class="pricing-feature">Гибкое использование</li>
+          <li class="pricing-feature">Токены без срока действия</li>
+          <li class="pricing-feature">Доступ к регистрации</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost btn-block">Купить токены</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════════════════════ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="container faq__inner">
+
+    <div class="faq__header" data-anim>
+      <div class="section-tag">FAQ</div>
+      <h2 id="faq-title" class="section-title">Частые вопросы</h2>
+      <p class="section-subtitle" style="margin-inline: auto;">Всё, что нужно знать перед стартом.</p>
+    </div>
+
+    <ul class="faq-list" role="list">
+
+      <li class="faq-item" role="listitem">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-a-1"
+        >
+          Как расходуются токены?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-a-1" class="faq-answer" hidden>
+          Каждый запрос или генерация потребляет токены. Мелкие операции — 1–10 токенов, генерация полного плана — ~100–500 токенов (пример).
+        </div>
+      </li>
+
+      <li class="faq-item" role="listitem">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-a-2"
+        >
+          Могу ли я экспортировать документацию?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-a-2" class="faq-answer" hidden>
+          Да — PDF / MD / JSON.
+        </div>
+      </li>
+
+      <li class="faq-item" role="listitem">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-a-3"
+        >
+          Насколько точные результаты?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-a-3" class="faq-answer" hidden>
+          Результат зависит от входных данных; платформа даёт рабочие гипотезы и требует human-in-the-loop проверку.
+        </div>
+      </li>
+
+      <li class="faq-item" role="listitem">
+        <button
+          class="faq-question"
+          aria-expanded="false"
+          aria-controls="faq-a-4"
+        >
+          Есть ли бесплатный период?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div id="faq-a-4" class="faq-answer" hidden>
+          Опционально: 7-дневный trial с 500 токенами.
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="faq-contact" data-anim>
+      <p>
+        Свяжитесь с поддержкой:
+        <a href="mailto:hi@mvpbot.ai">hi@mvpbot.ai</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MARKETPLACE
+════════════════════════════════════════════════════════════ -->
+<section id="marketplace" aria-labelledby="marketplace-title">
+  <div class="container">
+
+    <div class="marketplace__header" data-anim>
+      <div class="section-tag">Marketplace</div>
+      <h2 id="marketplace-title" class="section-title">Marketplace идей</h2>
+      <p class="section-subtitle">
+        Готовые идеи с первичной валидацией — купите и получите стартовый пакет.
+      </p>
+    </div>
+
+    <div class="marketplace__grid">
+
+      <article class="market-card">
+        <div class="market-card__emoji" aria-hidden="true">🌿</div>
+        <h3 class="market-card__title">EcoShop AI</h3>
+        <p class="market-card__desc">
+          Маркетплейс для локальных экологичных товаров с AI-рекомендациями.
+        </p>
+        <div class="market-card__deliverables">
+          <strong>Включено:</strong>
+          one-pager, TAM, конкурентный анализ
+        </div>
+        <div class="market-card__footer">
+          <span class="market-card__price">15&nbsp;000&nbsp;₽</span>
+          <a href="#contact" class="market-card__btn">Купить</a>
+        </div>
+      </article>
+
+      <article class="market-card">
+        <div class="market-card__emoji" aria-hidden="true">⚡</div>
+        <h3 class="market-card__title">AutoMVP Store</h3>
+        <p class="market-card__desc">
+          Генератор лендингов и MVP для локального бизнеса (шаблоны + интеграции).
+        </p>
+        <div class="market-card__deliverables">
+          <strong>Включено:</strong>
+          продуктовая идея, минимальный фреймворк, план монетизации
+        </div>
+        <div class="market-card__footer">
+          <span class="market-card__price">10&nbsp;000&nbsp;₽</span>
+          <a href="#contact" class="market-card__btn">Купить</a>
+        </div>
+      </article>
+
+      <article class="market-card">
+        <div class="market-card__emoji" aria-hidden="true">🩺</div>
+        <h3 class="market-card__title">HealthFace AI</h3>
+        <p class="market-card__desc">
+          Сервис персонализированных планов здоровья с ИИ-ассистентом.
+        </p>
+        <div class="market-card__deliverables">
+          <strong>Включено:</strong>
+          краткая документация, целевая аудитория, оценка рынка
+        </div>
+        <div class="market-card__footer">
+          <span class="market-card__price">12&nbsp;500&nbsp;₽</span>
+          <a href="#contact" class="market-card__btn">Купить</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="marketplace__cta">
+      <a href="#contact" class="btn btn-ghost">Открыть Marketplace</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BENEFITS — Почему MVPBot
+════════════════════════════════════════════════════════════ -->
+<section id="benefits" aria-labelledby="benefits-title">
+  <div class="container">
+
+    <div class="benefits__layout">
+
+      <div class="benefits__text">
+        <div class="section-tag" data-anim>Преимущества</div>
+        <h2 id="benefits-title" class="section-title" data-anim>Почему MVPBot?</h2>
+        <p class="section-subtitle" data-anim>
+          Мы собрали всё, что нужно для успешного запуска стартапа, в одной платформе.
+        </p>
+
+        <ul class="benefits__list" aria-label="Преимущества платформы">
+          <li class="benefit-item" data-anim data-delay="0">
+            <span class="benefit-item__icon" aria-hidden="true">🔍</span>
+            <span class="benefit-item__text">Глубокий анализ рынка</span>
+          </li>
+          <li class="benefit-item" data-anim data-delay="0.07">
+            <span class="benefit-item__icon" aria-hidden="true">✅</span>
+            <span class="benefit-item__text">Валидация идеи и спроса</span>
+          </li>
+          <li class="benefit-item" data-anim data-delay="0.14">
+            <span class="benefit-item__icon" aria-hidden="true">📋</span>
+            <span class="benefit-item__text">Готовые артефакты (one-pager, PRD, flow, financials)</span>
+          </li>
+          <li class="benefit-item" data-anim data-delay="0.21">
+            <span class="benefit-item__icon" aria-hidden="true">⚡</span>
+            <span class="benefit-item__text">Быстрый запуск — от идеи до релиза</span>
+          </li>
+          <li class="benefit-item" data-anim data-delay="0.28">
+            <span class="benefit-item__icon" aria-hidden="true">🧑‍💻</span>
+            <span class="benefit-item__text">Human-in-the-loop финальная проверка</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits__visual" aria-hidden="true">
+        <div class="benefits-graphic">
+          <div class="benefits-stat-grid">
+            <div class="benefits-stat">
+              <span class="benefits-stat__num">14</span>
+              <span class="benefits-stat__label">дней до MVP</span>
+            </div>
+            <div class="benefits-stat">
+              <span class="benefits-stat__num">6+</span>
+              <span class="benefits-stat__label">AI-агентов</span>
+            </div>
+            <div class="benefits-stat">
+              <span class="benefits-stat__num">100%</span>
+              <span class="benefits-stat__label">ваши данные</span>
+            </div>
+            <div class="benefits-stat">
+              <span class="benefits-stat__num">PDF</span>
+              <span class="benefits-stat__label">экспорт</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     AGENTS
+════════════════════════════════════════════════════════════ -->
+<section id="agents" aria-labelledby="agents-title">
+  <div class="container">
+
+    <div class="agents__header" data-anim>
+      <div class="section-tag">AI-агенты</div>
+      <h2 id="agents-title" class="section-title">Команда AI-агентов</h2>
+      <p class="section-subtitle">
+        Каждый агент — специалист в своей области. Вместе они покрывают весь цикл запуска стартапа.
+      </p>
+    </div>
+
+    <div class="agents__grid">
+
+      <article class="agent-card">
+        <div class="agent-card__emoji" aria-hidden="true">🏗️</div>
+        <h3 class="agent-card__title">Продукт-архитектор</h3>
+        <p class="agent-card__desc">Определяет ядро, API, стек.</p>
+        <div class="agent-card__output">Выход: PRD, ER-diagram</div>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__emoji" aria-hidden="true">📊</div>
+        <h3 class="agent-card__title">Маркет-аналитик</h3>
+        <p class="agent-card__desc">Изучает рынок, сегменты, каналы.</p>
+        <div class="agent-card__output">Выход: TAM, конкурентный анализ</div>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__emoji" aria-hidden="true">📣</div>
+        <h3 class="agent-card__title">Маркетинг-специалист</h3>
+        <p class="agent-card__desc">Стратегии продвижения, первые каналы.</p>
+        <div class="agent-card__output">Выход: launch plan, KPI</div>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__emoji" aria-hidden="true">🎨</div>
+        <h3 class="agent-card__title">UX/Product Designer</h3>
+        <p class="agent-card__desc">Прототипы, user-flows.</p>
+        <div class="agent-card__output">Выход: Figma prototype</div>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__emoji" aria-hidden="true">🖌️</div>
+        <h3 class="agent-card__title">UI Designer</h3>
+        <p class="agent-card__desc">Визуальная система, assets.</p>
+        <div class="agent-card__output">Выход: UI-kit</div>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__emoji" aria-hidden="true">💰</div>
+        <h3 class="agent-card__title">Финансовый advisor</h3>
+        <p class="agent-card__desc">Финмодель, unit economics.</p>
+        <div class="agent-card__output">Выход: P&L, прогноз</div>
+      </article>
+
+    </div>
+
+    <div class="agents__cta-block">
+      <p class="agents__cta-text">Нужен кастомный агент для вашей задачи?</p>
+      <a href="#contact" class="btn btn-ghost">Нужен кастомный агент — обсудить задачу</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TURNKEY DEVELOPMENT
+════════════════════════════════════════════════════════════ -->
+<section id="turnkey" aria-labelledby="turnkey-title">
+  <div class="container">
+
+    <div class="turnkey__layout">
+
+      <div class="turnkey__text">
+        <div class="section-tag" data-anim>Разработка</div>
+        <h2 id="turnkey-title" class="section-title" data-anim>Разработка под ключ</h2>
+        <p class="section-subtitle" data-anim>
+          Мы превращаем вашу документацию из MVP в готовый технологичный продукт.
+        </p>
+
+        <div class="turnkey__tags" data-anim>
+          <span class="tech-tag">SaaS web-platform</span>
+          <span class="tech-tag">Mobile-first (Flutter)</span>
+          <span class="tech-tag">Telegram ecosystem</span>
+          <span class="tech-tag">AI Engineering</span>
+          <span class="tech-tag">Custom LLM agents</span>
+        </div>
+
+        <a href="#contact" class="btn btn-primary" data-anim>Реализовать мой MVP</a>
+      </div>
+
+      <div class="turnkey__visual" data-anim>
+        <div class="turnkey-card">
+          <div class="turnkey-card__header">
+            <div class="turnkey-card__icon" aria-hidden="true">🚀</div>
+            <div>
+              <div class="turnkey-card__title">От документации к продукту</div>
+              <div class="turnkey-card__sub">Полный цикл разработки</div>
+            </div>
+          </div>
+          <ol class="turnkey-steps">
+            <li class="turnkey-step">
+              <span class="turnkey-step__num" aria-hidden="true">1</span>
+              <span class="turnkey-step__text">Анализ MVP-документации и требований</span>
+            </li>
+            <li class="turnkey-step">
+              <span class="turnkey-step__num" aria-hidden="true">2</span>
+              <span class="turnkey-step__text">Дизайн интерфейса и архитектура системы</span>
+            </li>
+            <li class="turnkey-step">
+              <span class="turnkey-step__num" aria-hidden="true">3</span>
+              <span class="turnkey-step__text">Разработка с AI-ускорением</span>
+            </li>
+            <li class="turnkey-step">
+              <span class="turnkey-step__num" aria-hidden="true">4</span>
+              <span class="turnkey-step__text">QA, деплой и поддержка после запуска</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT / LEAD FORM
+════════════════════════════════════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+
+    <div class="contact__layout">
+
+      <div class="contact__info">
+        <div class="section-tag" data-anim>Контакты</div>
+        <h2 id="contact-title" class="section-title" data-anim>Получить план запуска</h2>
+        <p class="section-subtitle" data-anim>
+          Расскажите нам о своей идее — мы подготовим персональный план запуска MVP за 14 дней.
+        </p>
+
+        <ul class="contact-highlights" data-anim>
+          <li class="contact-highlight">
+            <span class="contact-highlight__icon">⚡</span>
+            Ответим в течение 24 часов
+          </li>
+          <li class="contact-highlight">
+            <span class="contact-highlight__icon">🔒</span>
+            Ваша идея защищена NDA
+          </li>
+          <li class="contact-highlight">
+            <span class="contact-highlight__icon">📧</span>
+            <a href="mailto:hi@mvpbot.ai" style="color: var(--green-500);">hi@mvpbot.ai</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Lead capture form -->
+      <div>
+        <form id="lead-form" novalidate aria-label="Форма заявки">
+
+          <div class="form-field">
+            <label class="form-label" for="form-name">Имя <span aria-label="обязательное поле">*</span></label>
+            <input
+              id="form-name"
+              class="form-input"
+              type="text"
+              name="name"
+              placeholder="Ваше имя"
+              autocomplete="name"
+              required
+            />
+            <span class="field-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="form-email">Email <span aria-label="обязательное поле">*</span></label>
+            <input
+              id="form-email"
+              class="form-input"
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+            />
+            <span class="field-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="form-idea">Краткое описание идеи <span aria-label="обязательное поле">*</span></label>
+            <textarea
+              id="form-idea"
+              class="form-textarea"
+              name="idea"
+              placeholder="Расскажите о вашем проекте, целевой аудитории и ожидаемом результате..."
+              required
+            ></textarea>
+            <span class="field-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-consent">
+            <input id="form-consent" type="checkbox" name="consent" required />
+            <label for="form-consent">
+              Я согласен(-на) с <a href="#footer">Политикой конфиденциальности</a> и обработкой персональных данных.
+            </label>
+          </div>
+          <span class="field-error" role="alert" aria-live="polite" style="margin-top: -12px;"></span>
+
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top: 4px;">
+            Получить план запуска
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+
+      <div>
+        <a href="#" class="logo footer__logo" aria-label="MVPBot — на главную">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <rect width="32" height="32" rx="8" fill="#0f8b5f"/>
+            <path d="M8 22L14 10L18 17L21 13L24 22" stroke="#2dd4bf" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="23" cy="10" r="2" fill="#7ee7c6"/>
+          </svg>
+          MVP<span class="logo-dot">Bot</span>
+        </a>
+        <p class="footer__tagline">AI-платформа для запуска стартапов</p>
+        <p class="footer__copy">© 2026 MVPBot. Все права защищены.</p>
+      </div>
+
+      <nav aria-label="Ссылки в подвале">
+        <div class="footer__links">
+          <a href="mailto:hi@mvpbot.ai">hi@mvpbot.ai</a>
+          <a href="#footer">Политика конфиденциальности</a>
+          <a href="#footer">Условия использования</a>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SUCCESS MODAL
+════════════════════════════════════════════════════════════ -->
+<div
+  id="success-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+  hidden
+  tabindex="-1"
+>
+  <div class="modal__box">
+    <div class="modal__icon" aria-hidden="true">🎉</div>
+    <h2 id="modal-title" class="modal__title">Заявка отправлена!</h2>
+    <p class="modal__text">
+      Спасибо! Мы подготовим ваш план запуска и свяжемся с вами.
+    </p>
+    <button id="modal-close" class="btn btn-primary btn-block">Закрыть</button>
+  </div>
+</div>
+
+<!-- Main JS (ES modules) -->
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

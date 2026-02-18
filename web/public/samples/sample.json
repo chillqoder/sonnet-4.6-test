@@ -1,0 +1,47 @@
+[
+  {
+    "id": "item_001",
+    "title": "Valid image item",
+    "description": "This item has a valid image URL.",
+    "image": "https://picsum.photos/seed/1/400/300",
+    "thumbnail": "https://picsum.photos/seed/1/100/100",
+    "tags": ["sample", "valid"]
+  },
+  {
+    "id": "item_002",
+    "title": "Broken image item",
+    "description": "This item has a broken image URL.",
+    "image": "https://example.invalid/broken-image.jpg",
+    "tags": ["sample", "broken"]
+  },
+  {
+    "id": "item_003",
+    "title": "Mixed images item",
+    "description": "This item has one valid and one broken image URL.",
+    "poster": "https://picsum.photos/seed/3/400/300",
+    "backdrop": "https://example.invalid/no-backdrop.png",
+    "tags": ["sample", "mixed"]
+  },
+  {
+    "id": "item_004",
+    "title": "No images item",
+    "description": "This item has no image URLs at all.",
+    "metadata": {
+      "author": "Test",
+      "created": "2025-01-01"
+    },
+    "tags": ["sample", "no-image"]
+  },
+  {
+    "id": "item_005",
+    "title": "Multiple images item",
+    "description": "This item has several image URLs.",
+    "images": [
+      "https://picsum.photos/seed/5a/400/300",
+      "https://picsum.photos/seed/5b/400/300",
+      "https://picsum.photos/seed/5c/400/300",
+      "https://example.invalid/img4.webp"
+    ],
+    "tags": ["sample", "gallery"]
+  }
+]
